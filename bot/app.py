@@ -2,6 +2,10 @@
 
 from paho.mqtt import client as mqttclient
 from collections import OrderedDict
+from picamera import PiCamera, Color
+from telegram import Update, ChatAction
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
+
 import json
 import time
 import socket
@@ -17,11 +21,6 @@ from fractions import Fraction
 import subprocess
 import sys
 from functools import wraps
-from picamera import PiCamera, Color
-
-import telegram
-from telegram import Update, ChatAction
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
 
 #Local imports
 from support.validate import handleClientArgs
