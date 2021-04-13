@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  bot:
+     container_name: bot
+     build:
+        context: .
+        dockerfile: Dockerfile
+     network_mode: host
+     restart: always
+     volumes:
+        - /opt/vc:/opt/vc
+     environment:
+        LD_LIBRARY_PATH: /opt/vc/lib
+     devices:
+        - "/dev/vchiq:/dev/vchiq"
+     privileged: true
