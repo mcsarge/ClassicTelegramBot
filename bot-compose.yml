@@ -10,7 +10,15 @@ services:
      volumes:
         - /opt/vc:/opt/vc
      environment:
-        LD_LIBRARY_PATH: /opt/vc/lib
+        - LD_LIBRARY_PATH=/opt/vc/lib
+        - CLASSIC_NAME=classic
+        - MQTT_HOST=mosquitto
+        - MQTT_PORT=1883
+        - MQTT_ROOT=ClassicMQTT
+        - MQTT_USER=ClassicClient
+        - MQTT_PASS=ClassicClient123
+
      devices:
         - "/dev/vchiq:/dev/vchiq"
      privileged: true
+
